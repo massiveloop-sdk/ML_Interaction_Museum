@@ -1,4 +1,4 @@
-# The Tutorial World
+# Massive Loop Interaction Museum
 
 The **Massive Loop Interaction Museum** is an immersive, cross-platform tutorial environment for both VR and Desktop PC. Designed to showcase the powerful built-in features of the Massive Loop SDK, it demonstrates how our component system empowers creators to enhance their Unity projects with dynamic, interactive elements with little to no scripting required.
 
