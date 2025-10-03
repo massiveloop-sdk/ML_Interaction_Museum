@@ -64,13 +64,13 @@ MLClickable component makes a GameObject clickable by player. You can register t
 
 ![clickable](Screenshots/Clickable.png)
 
-![Clickable](Screenshots\Clickable.png)
+
 
 ## MLStation
 
 MLStation component provides a mean to attach players to another object. The most common use for this is creating a seat. When attached to the station, the player loses its movement abilities, but still can move their head and hands. Using the Lua, the player controller inputs can be accessed and used to drive vehicles.
 
-![StationChair](Screenshots\StationChair.png)
+![stationchair](Screenshots\StationChair.png)
 
 
 
