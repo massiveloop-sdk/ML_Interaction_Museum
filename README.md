@@ -62,6 +62,8 @@ By attaching [MLSynchronizer](https://docs.massiveloop.com/docs/create/component
 
 MLClickable component makes a GameObject clickable by player. You can register the click event and use it in variety of ways. For example, it can be used as a simple button, or you can use the Link functionality to load a URL in a link.
 
+![clickable](Screenshots/Clickable.png)
+
 ![Clickable](Screenshots\Clickable.png)
 
 ## MLStation
