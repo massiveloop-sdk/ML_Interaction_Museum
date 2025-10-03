@@ -193,6 +193,12 @@ This is a grabbable object that plays impact sounds on collision events. When th
 
 
 
+## Jukebox
+
+Music player & Visualization system. Interactable with our MLClickable system.
+
+![ObjectSpawner](Screenshots/Jukebox.png)
+
 ## Teleport Examples
 
 #### Trigger Teleport
