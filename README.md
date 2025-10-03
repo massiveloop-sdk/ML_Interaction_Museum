@@ -70,7 +70,7 @@ MLClickable component makes a GameObject clickable by player. You can register t
 
 MLStation component provides a mean to attach players to another object. The most common use for this is creating a seat. When attached to the station, the player loses its movement abilities, but still can move their head and hands. Using the Lua, the player controller inputs can be accessed and used to drive vehicles.
 
-![stationchair](Screenshots\StationChair.png)
+![stationchair](Screenshots/StationChair.png)
 
 
 
@@ -80,13 +80,13 @@ Makes the attached object a platform where players can stand on it and move by i
 
 You can adjust the platform to create a local gravity which will affect any player step on it.
 
-![MLPlatform](Screenshots\MLPlatform.png)
+![MLPlatform](Screenshots/MLPlatform.png)
 
 ## MLPortal
 
 Portal component turns any object with a collider (trigger) to a portal to the specified world in Massive Loop metaverse.
 
-![MLportal](Screenshots\MLportal.png)
+![MLportal](Screenshots/MLportal.png)
 
 ## Streaming Browser & Video Player
 
@@ -98,7 +98,7 @@ The Remote control can be spawned using `secondary` in VR and `f` + `RMB` or `es
 
 **Note**: Make sure the Gizmos are enabled in the browser in order to modify the browser surface.
 
-![BrowserVideoPlayer](Screenshots\BrowserVideoPlayer.png)
+![BrowserVideoPlayer](Screenshots/BrowserVideoPlayer.png)
 
 
 
@@ -122,7 +122,7 @@ Creates a mirror in defined area. Make sure the Gizmos are active to edit the su
 | **DeactivateMirror()** | Deactivates the mirror. | none  |
 | **ToggleMirror()**     | Toggles the mirror.     | none  |
 
-![Mirror](Screenshots\Mirror.png)
+![Mirror](Screenshots/Mirror.png)
 
 
 
@@ -138,7 +138,7 @@ It utilizes an MLGrab component to determine when the user is drawing, when they
 
 Each button on the UI canvas systems make use of the MLClickable component to decipher when a user interacts with it. This is also used for the color selection process.
 
-![DrawingPens](Screenshots\DrawingPens.png)
+![DrawingPens](Screenshots/DrawingPens.png)
 
 
 
@@ -151,7 +151,7 @@ This is an example raycast based "weapon". It makes use of the MLGrab component 
 
 Each event is synchronized, making the process of creating event-based systems with our MLGrab Component exceptionally easy!
 
-![Laser](Screenshots\Laser.png)
+![Laser](Screenshots/Laser.png)
 
 
 
@@ -161,7 +161,7 @@ This grapple hook makes heavy use of the MLGrab component.
 
 The mechanics here cause the user to grapple to the object their hook has collided with.
 
-![GrappleHook](Screenshots\GrappleHook.png)
+![GrappleHook](Screenshots/GrappleHook.png)
 
 
 
@@ -173,7 +173,7 @@ It will also apply an upwards buoyancy physics force to rigidbodies in the volum
 
 (Note that User rigidbodies are currently unaffected)
 
-![Watervolume](Screenshots\Watervolume.gif)
+![Watervolume](Screenshots/Watervolume.gif)
 
 
 
@@ -189,7 +189,7 @@ This spawner is set to a limit of 10 objects for user comfort.
 
 This is a grabbable object that plays impact sounds on collision events. When there is a low impact collision, low impact sounds are played. When there is a high impact collision, high impact sounds are played.
 
-![ObjectSpawner](Screenshots\ObjectSpawner.png)
+![ObjectSpawner](Screenshots/ObjectSpawner.png)
 
 
 
@@ -203,7 +203,7 @@ When the local user walks into this trigger volume, they will be teleported to a
 
 When the local user walks into this trigger volume and presses a button, they will be teleported to a specific gameobject position. In this instance you will be teleported back to the world spawn point.
 
-![Teleports](Screenshots\Teleports.png)
+![Teleports](Screenshots/Teleports.png)
 
 
 
@@ -211,15 +211,15 @@ When the local user walks into this trigger volume and presses a button, they wi
 
 ## Door Examples
 
-* **Trigger Door**![DoorTrigger](Screenshots\DoorTrigger.png)
+* **Trigger Door**![DoorTrigger](Screenshots/DoorTrigger.png)
 
 * **Button Door**
 
-  ![DoorButton](Screenshots\DoorButton.png)
+  ![DoorButton](Screenshots/DoorButton.png)
 
 * **Non-physics door**
 
-  ![physicsDoor](Screenshots\physicsDoor.png)
+  ![physicsDoor](Screenshots/physicsDoor.png)
 
-* **Physics based door**![PhysicsDoor2](Screenshots\PhysicsDoor2.png)
+* **Physics based door**![PhysicsDoor2](Screenshots/PhysicsDoor2.png)
 
