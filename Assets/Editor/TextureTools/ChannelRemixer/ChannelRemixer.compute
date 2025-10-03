@@ -1,0 +1,79 @@
+﻿#include "UnityCG.cginc"
+
+int RedChannelSetting;
+int GreenChannelSetting;
+int BlueChannelSetting;
+int AlphaChannelSetting;
+
+bool RedChannelInvert;
+bool GreenChannelInvert;
+bool BlueChannelInvert;
+bool AlphaChannelInvert;
+
+float2 RedChannelTextureResolution;
+float2 GreenChannelTextureResolution;
+float2 BlueChannelTextureResolution;
+float2 AlphaChannelTextureResolution;
+
+Texture2D<float4> RedChannelTexture;
+Texture2D<float4> GreenChannelTexture;
+Texture2D<float4> BlueChannelTexture;
+Texture2D<float4> AlphaChannelTexture;
+
+RWTexture2D<float4> Result;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+float GetChannel(int setting, bool invert, float4 color)
+{
+    float finalValue = 0;
+
+    if (setting == 0)
+        finalValue = color.r;
+    else if (setting == 1)
+        finalValue = color.g;
+    else if (setting == 2)
+        finalValue = color.b;
+    else if (setting == 3)
+        finalValue = color.a;
+    else if (setting == 4)
+        finalValue = 0;
+    else if (setting == 5)
+        finalValue = 1;
+
+    if (invert) finalValue = 1.0f - finalValue;
+
+    return finalValue;
+}
+
+#pragma kernel ChannelRemixer
+[numthreads(8,8,1)]
+void ChannelRemixer (uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+
+    float4 color1 = TEX2D(RedChannelTexture, uv / RedChannelTextureResolution);
+    float4 color2 = TEX2D(GreenChannelTexture, uv / GreenChannelTextureResolution);
+    float4 color3 = TEX2D(BlueChannelTexture, uv / BlueChannelTextureResolution);
+    float4 color4 = TEX2D(AlphaChannelTexture, uv / AlphaChannelTextureResolution);
+
+    color1 = float4(LinearToGammaSpace(color1), color1.a);
+    color2 = float4(LinearToGammaSpace(color2), color2.a);
+    color3 = float4(LinearToGammaSpace(color3), color3.a);
+    color4 = float4(LinearToGammaSpace(color4), color4.a);
+        
+    float newRed = GetChannel(RedChannelSetting, RedChannelInvert, color1);
+    float newGreen = GetChannel(GreenChannelSetting, GreenChannelInvert, color2);
+    float newBlue = GetChannel(BlueChannelSetting, BlueChannelInvert, color3);
+    float newAlpha = GetChannel(AlphaChannelSetting, AlphaChannelInvert, color4);
+
+    float4 newColor = float4(newRed, newGreen, newBlue, newAlpha);
+
+    Result[id.xy] = newColor;
+}

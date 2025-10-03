@@ -1,0 +1,23 @@
+
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/*.[^l]*":true,
+            "**/*.l[^u]*":true,
+            "**/MLSDK/":true
+        },
+        "explorer.compactFolders": false,
+        "explorer.autoReveal": true,
+        "Lua.hover.previewFields": 0,
+        "Lua.workspace.library": [
+            ".vscode/luameta/ml_api_meta.lua" 
+        ],
+        "Lua.workspace.preloadFileSize": 1024
+    }
+}
+

@@ -1,0 +1,49 @@
+﻿#include "UnityCG.cginc"
+
+int BlurSamples;
+float2 BlurDirection;
+
+float2 SourceTextureResolution;
+
+Texture2D<float4> SourceTexture;
+
+RWTexture2D<float4> Result;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+float4 blur(float2 uv)
+{
+    float2 scale = float2(1, 1) / SourceTextureResolution.xy;
+    float4 col = float4(0, 0, 0, 0);
+    float accum = 0.0;
+
+    for (int x = -(BlurSamples / 2); x <= BlurSamples / 2; ++x)
+    {
+        //col += SourceTexture.SampleLevel(_LinearClamp, uv + scale * (BlurDirection * x), 0);
+        col += SourceTexture.SampleLevel(_LinearClamp, uv + (BlurDirection * scale * x), 0);
+
+        accum += 1;
+    }
+
+    return col / accum;
+}
+
+#pragma kernel DirectionalBlur
+[numthreads(1,1,1)]
+void DirectionalBlur(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+    float4 originalColor = blur(uv);
+
+    //Color Space Correction
+    originalColor = float4(LinearToGammaSpace(originalColor), originalColor.a);
+    Result[id.xy] = originalColor;
+}

@@ -1,0 +1,80 @@
+﻿#include "UnityCG.cginc"
+
+float NormalStrength;
+float TextureOffset;
+
+float2 SourceTextureResolution;
+
+Texture2D<float4> Read_SourceTexture_Pass1;
+
+RWTexture2D<float4> Write_SourceTexture_Pass1;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+#define pixelToTexelRatio (_ScreenParams.xy/SourceTextureResolution.xy)
+
+/*
+float ddx(float value)
+{
+    float dx = (value - tex2Dfetch(sampler, texcoord, 0, float2(1, 0)).r) * 0.5;
+    return dx;
+}
+
+float ddy(float value)
+{
+    float dy = (value - tex2Dfetch(sampler, texcoord, 0, float2(0, 1)).r) * 0.5;
+    return dy;
+}
+*/
+
+float2 stdNormalMap(float2 uv)
+{
+    float height = Read_SourceTexture_Pass1.SampleLevel(_LinearClamp, uv, 0);
+
+    //return -float2(ddx(height.x), ddy(height.x)) * pixelToTexelRatio;
+    //return -float2(height, height) * pixelToTexelRatio;
+    return float2(1, 1);
+}
+
+float constructZ(float3 normal)
+{
+    float reconstructZ = sqrt(1.0f - (normal.x * normal.x + normal.y * normal.y));
+
+    return reconstructZ;
+}
+
+/*
+float2 texNormalMap(in vec2 uv)
+{
+    float2 s = float2(1.0f, 1.0f) / heightMapResolution.xy;
+
+    float p = TEX2D(Read_SourceTexture_Pass1, uv).x;
+    float h1 = TEX2D(Read_SourceTexture_Pass1, uv + s * float2(TextureOffset, 0)).x;
+    float v1 = TEX2D(Read_SourceTexture_Pass1, uv + s * float2(0, TextureOffset)).x;
+
+    return (p - float2(h1, v1));
+}
+*/
+
+#pragma kernel HeightToNormal_Pass1
+[numthreads(1, 1, 1)]
+void HeightToNormal_Pass1(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+    float2 computedNormal = stdNormalMap(uv);
+
+    computedNormal *= NormalStrength;
+    computedNormal += 0.5;
+
+    //Color Space Correction
+    computedNormal = LinearToGammaSpace(float3(computedNormal.xy, 0.0f)).xy;
+    Write_SourceTexture_Pass1[id.xy] = float4(computedNormal, 1.0f, 1.0f);
+}

@@ -1,0 +1,957 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1889237865152632355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889237865152632362}
+  - component: {fileID: 1889237865152632361}
+  - component: {fileID: 1889237865152632360}
+  - component: {fileID: 1889237865152632359}
+  - component: {fileID: 1889237865152632358}
+  - component: {fileID: 1889237865152632357}
+  - component: {fileID: 1889237865152632356}
+  - component: {fileID: 8714435251209495228}
+  - component: {fileID: 7712197629936321666}
+  - component: {fileID: 3331378843701478929}
+  m_Layer: 0
+  m_Name: PhysicsSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1889237865152632362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6, y: 1.6922998, z: -12}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6300126600931650481}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1889237865152632361
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1889237865152632360
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d6daa9bda2861ca4b90a9c9657ffc475, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1889237865152632359
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Material: {fileID: 13400000, guid: cab119ad268ce5e46bcae8bf417d6a16, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1889237865152632358
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!82 &1889237865152632357
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1889237865152632356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1810743821, guid: e64d7c6a8d43a81478f08372f02691fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunOnMasterOnly: 0
+  luaScript: {fileID: -4453496751972146522, guid: fb8d5c902a5dc58418e6e0a4c188faad, type: 3}
+  SDKViewID: 0
+  SerializedLuaFields:
+  - Data:
+      isValid: 1
+      variableName: Low Impact Magnitude Threshold
+      type: 5
+      complexType: Number
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 0}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Magnitude Threshold
+      type: 5
+      complexType: Number
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 0}
+    Number: 0.5
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: Low Impact Sounds
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 5
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 84481581c8b493848802883f3b36cc44, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: Low Impact Sounds-1
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 6ef7a98fd96553242a99d8718f0f220b, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: Low Impact Sounds-2
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 0e2e494b6f6e427498c98ab500ae04ed, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: Low Impact Sounds-3
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 73bb6c64cd1351b4ba4ddcf526454c32, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: Low Impact Sounds-4
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 5ff554074e9c9b242ae6d86d6336cbcb, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Sounds
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 5
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 9c9c75358bc0f6d458dd39185cdbe563, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Sounds-1
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 41498c87ba4a6ce4d88dbfd0bb38aa94, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Sounds-2
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 89eabaf248bf32f479499c95a6cd2c97, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Sounds-3
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 957ff6be6887c454fb2a13d489ac197f, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  - Data:
+      isValid: 1
+      variableName: High Impact Sounds-4
+      type: 5
+      complexType: AudioClip
+      isEvent: 0
+      count: 1
+    isNull: 0
+    GameObject: {fileID: 0}
+    Object: {fileID: 8300000, guid: 84481581c8b493848802883f3b36cc44, type: 3}
+    Number: 0
+    Bool: 0
+    String: 
+    Vector2: {x: 0, y: 0}
+    Vector3: {x: 0, y: 0, z: 0}
+    Vector4: {x: 0, y: 0, z: 0, w: 0}
+    Quaternion: {x: 0, y: 0, z: 0, w: 0}
+    matrix4X4:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    LuaEventField:
+      m_PersistentCalls:
+        m_Calls: []
+  ObjcetUniqueId: 
+  LuaFileHash: -639585898
+  FamilyIdentifier: 11
+  OnPrefabHold: 1
+--- !u!114 &8714435251209495228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -861619018, guid: e64d7c6a8d43a81478f08372f02691fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabMechanic: 0
+  StickToHand: 0
+  AllowSteal: 0
+  ForceMultiplier: 0
+  TourqeMultiplier: 0
+  ApplyMovementPhysics: 1
+  OnPrimaryGrabBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPrimaryGrabEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSecondaryGrabBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSecondaryGrabEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPrimaryTriggerDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPrimaryTriggerUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSecondaryTriggerDown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSecondaryTriggerUp:
+    m_PersistentCalls:
+      m_Calls: []
+  SurfaceGrab: 0
+  GrabLocations:
+  - {fileID: 1301556456137447718}
+  enableOutline: 1
+--- !u!114 &7712197629936321666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -925012932, guid: e64d7c6a8d43a81478f08372f02691fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SubID: 0
+  handle: {fileID: 0}
+  SynchronizeTransform: 1
+  SynchronizePosition: 1
+  SynchronizeRotation: 1
+  SynchronizeScale: 0
+  Local: 0
+--- !u!114 &3331378843701478929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889237865152632355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1801124665, guid: e64d7c6a8d43a81478f08372f02691fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SynchronizeTransform: 0
+  SynchronizeTransformPosition: 0
+  SynchronizeTransformRotation: 0
+  SynchronizeTransformScale: 0
+  SynchronizeInstantiateAndDestroy: 0
+  CacheInstantiateAndDestroyEvents: 1
+  IsPrefab: 1
+  GUID: 1dcb46b0-4716-4f3c-be2a-b8e1bb77b05b
+  ViewID: -1
+  SynchronizationModules:
+  - {fileID: 7712197629936321666}
+--- !u!1 &4437999721257890015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6300126600931650481}
+  - component: {fileID: 1301556456137447718}
+  m_Layer: 0
+  m_Name: DefaultGrabLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6300126600931650481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437999721257890015}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.857143, y: 2.857143, z: 2.857143}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8051707752426894386}
+  m_Father: {fileID: 1889237865152632362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301556456137447718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437999721257890015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1257701178, guid: e64d7c6a8d43a81478f08372f02691fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  Primary: {fileID: 8051707752426894386}
+  PrimaryAuthority: 1
+  PrimaryType: 0
+  Secondary: {fileID: 0}
+  SecondaryAuthority: 1
+  SecondaryType: 0
+  HandType: 0
+--- !u!1 &5486500973164266758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8051707752426894386}
+  m_Layer: 0
+  m_Name: Primary Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8051707752426894386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5486500973164266758}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6300126600931650481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,0 +1,85 @@
+﻿#include "UnityCG.cginc"
+
+int BlurSamples;
+int BlurDirection;
+
+float2 SourceTextureResolution;
+
+Texture2D<float4> Read_SourceTexturePass1;
+Texture2D<float4> Read_SourceTexturePass2;
+
+RWTexture2D<float4> Write_SourceTexturePass1;
+RWTexture2D<float4> Write_SourceTexturePass2;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+#define pow2(x) (x * x)
+
+float gaussian(float2 i)
+{
+    float pi = atan(1.0) * 4.0;
+    float sigma = float(BlurSamples) * 0.25;
+
+    return 1.0 / (2.0 * pi * pow2(sigma)) * exp(-((pow2(i.x) + pow2(i.y)) / (2.0 * pow2(sigma))));
+}
+
+float4 blur(Texture2D<float4> tex, float2 uv)
+{
+    float2 scale = float2(1, 1) / SourceTextureResolution.xy;
+    float2 offset = float2(0, 0);
+    float4 col = float4(0, 0, 0, 0);
+    float accum = 0.0;
+    float weight = 0.0;
+
+    for (int i = -(BlurSamples / 2); i <= BlurSamples / 2; ++i)
+    {
+        if (BlurDirection == 0)
+            offset = float2(i, 0);
+        else
+            offset = float2(0, i);
+
+        weight = gaussian(offset);
+
+        col += tex.SampleLevel(_LinearClamp, uv + scale * offset, 0) * weight;
+
+        accum += weight;
+    }
+
+    return col / accum;
+}
+
+#pragma kernel GaussianBlur_Pass1
+[numthreads(1, 1, 1)]
+void GaussianBlur_Pass1(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+    BlurDirection = 0;
+    float4 originalColor = blur(Read_SourceTexturePass1, uv);
+
+    //Color Space Correction
+    //originalColor = float4(LinearToGammaSpace(originalColor), originalColor.a);
+    Write_SourceTexturePass1[id.xy] = originalColor;
+}
+
+#pragma kernel GaussianBlur_Pass2
+[numthreads(1, 1, 1)]
+void GaussianBlur_Pass2(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+    BlurDirection = 1;
+    float4 originalColor = blur(Read_SourceTexturePass2, uv);
+
+    //Color Space Correction
+    originalColor = float4(LinearToGammaSpace(originalColor), originalColor.a);
+    Write_SourceTexturePass2[id.xy] = originalColor;
+}

@@ -1,0 +1,59 @@
+﻿#include "UnityCG.cginc"
+
+int BlurSamples;
+
+float2 SourceTextureResolution;
+
+Texture2D<float4> SourceTexture;
+
+RWTexture2D<float4> Result;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+float4 BokehBlur(float2 uv)
+{
+	float4 sum = float4(0, 0, 0, 0);
+	float samples = BlurSamples;
+	float count = 0.0f;
+	float aspect = SourceTextureResolution.x / SourceTextureResolution.y;
+
+	for (float x = -samples; x <= samples; x += 1.0f) 
+	{
+		for (float y = -samples; y <= samples; y += 1.0f)
+		{
+			float2 o = float2(x, y);
+
+			if (length(o) <= samples)
+			{
+				float2 offset = float2(x, y);
+				offset *= float2(1.0f / SourceTextureResolution.x, 1.0f / SourceTextureResolution.y);
+
+				sum += SourceTexture.SampleLevel(_LinearClamp, uv + offset, 0);
+
+				count++;
+			}
+		}
+	}
+
+	return sum / count;
+}
+
+#pragma kernel CircleBlur
+[numthreads(1,1,1)]
+void CircleBlur(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+	float4 originalColor = BokehBlur(uv);
+
+    //Color Space Correction
+    originalColor = float4(LinearToGammaSpace(originalColor), originalColor.a);
+    Result[id.xy] = originalColor;
+}

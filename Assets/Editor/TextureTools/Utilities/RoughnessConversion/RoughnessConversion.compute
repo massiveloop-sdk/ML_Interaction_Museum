@@ -1,0 +1,60 @@
+﻿#include "UnityCG.cginc"
+
+float NormalStrength;
+float TextureOffset;
+
+float2 SourceTextureResolution;
+
+Texture2D<float4> Read_SourceTexture_Pass1;
+
+RWTexture2D<float4> Write_SourceTexture_Pass1;
+
+SamplerState _PointClamp;
+SamplerState _LinearClamp;
+
+float4 TEX2D(Texture2D<float4> tex, float2 uv)
+{
+    return tex.SampleLevel(_LinearClamp, uv, 0);
+}
+
+half SmoothnessToRoughness(half smoothness)
+{
+    return (1 - smoothness) * (1 - smoothness);
+}
+
+float SmoothnessToPerceptualRoughness(float smoothness)
+{
+    return (1 - smoothness);
+}
+
+float PerceptualRoughnessToRoughness(float perceptualRoughness)
+{
+    return perceptualRoughness * perceptualRoughness;
+}
+
+half RoughnessToPerceptualRoughness(half roughness)
+{
+    return sqrt(roughness);
+}
+
+half RoughnessToSmoothness(half roughness)
+{
+    return sqrt(1 - roughness);
+}
+
+#pragma kernel HeightToNormal_Pass1
+[numthreads(1, 1, 1)]
+void HeightToNormal_Pass1(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy + float2(0.5, 0.5);
+    uv /= SourceTextureResolution.xy;
+
+    float2 computedNormal = stdNormalMap(uv);
+
+    computedNormal *= NormalStrength;
+    computedNormal += 0.5;
+
+    //Color Space Correction
+    computedNormal = LinearToGammaSpace(float3(computedNormal.xy, 0.0f)).xy;
+    Write_SourceTexture_Pass1[id.xy] = float4(computedNormal, 1.0f, 1.0f);
+}

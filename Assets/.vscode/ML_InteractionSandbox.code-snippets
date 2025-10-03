@@ -1,0 +1,14 @@
+
+{
+    "Behavior":{
+        "prefix": ["lua"],
+        "body":
+        [
+            "do\n\tlocal ${1:$TM_FILENAME_BASE} = LUA.script;\n\n\t--- Start called on beginning\n\tfunction $1.Start()\n\t\t${0}\n\tend\n\n\t--- update called on every frame\n\tfunction $1.Update()\n\t\t\n\tend\n\nend"
+        ]
+    },
+    "Log":{
+        "prefix": "Log",
+        "body": "Debug.Log(\"${1}\")"
+    }
+}

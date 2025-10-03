@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4e3a8cd788b887c47b8fab5219cef49b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: ML.SDK:LuaFile
+      assembly: ML_GameAssembly
+      name: Assets/MLRepo/ml.72201f1e-ba18-487e-adc4-4381ae10e21b.davidmatos_doortrigger/DoorTrigger/Scripts/DoorBase.lua
+    second: {fileID: -4453496751972146522, guid: df00047d736849f4db6946c7fcedcc7e, type: 3}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -948931762, guid: 850b913be552a1243aa55a9a3af231ca, type: 3}
+  LuaFileDependencies: []
