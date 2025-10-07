@@ -219,7 +219,7 @@ When the local user walks into this trigger volume and presses a button, they wi
 
 * **Trigger Door**
 
-* ![DoorTrigger](Screenshots/DoorTriggerGif.gif)
+  ![DoorTrigger](Screenshots/DoorTriggerGif.gif)
 
 * **Button Door**
 
