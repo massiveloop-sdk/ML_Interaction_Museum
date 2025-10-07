@@ -14,7 +14,7 @@ We've built this world to be learned from and shared. If you're curious to see h
 
 **Explore, interact, and discover the tools to bring your own immersive visions to life with Massive Loop!**
 
-![watervolume](Screenshots/Watervolume.gif)
+<img src="Screenshots/Watervolume.gif" alt="watervolume" style="zoom:150%;" />
 
 
 
@@ -28,7 +28,7 @@ The MLGrab component allow dual hand grabbing of the objects. The first hand whi
 
 By attaching [MLSynchronizer](https://docs.massiveloop.com/docs/create/components/MLSynchronizer) to the the object, the Grabbing events will be synchronized to everyone in the room.
 
-![mlgrab](Screenshots/MLGrabGif.gif)
+<img src="Screenshots/MLGrabGif.gif" alt="mlgrab" style="zoom:150%;" />
 
 ##### [Requires](https://docs.massiveloop.com/docs/create/components/list/MLGrab.html#requires)
 
@@ -70,7 +70,7 @@ MLClickable component makes a GameObject clickable by player. You can register t
 
 MLStation component provides a mean to attach players to another object. The most common use for this is creating a seat. When attached to the station, the player loses its movement abilities, but still can move their head and hands. Using the Lua, the player controller inputs can be accessed and used to drive vehicles.
 
-![stationchair](Screenshots/StationSeatGif.gif)
+<img src="Screenshots/StationSeatGif.gif" alt="stationchair" style="zoom:150%;" />
 
 
 
@@ -98,7 +98,7 @@ The Remote control can be spawned using `secondary` in VR and `f` + `RMB` or `es
 
 **Note**: Make sure the Gizmos are enabled in the browser in order to modify the browser surface.
 
-![BrowserVideoPlayer](Screenshots/MLBrowserGif.gif)
+<img src="Screenshots/MLBrowserGif.gif" alt="BrowserVideoPlayer" style="zoom:150%;" />
 
 
 
@@ -122,7 +122,7 @@ Creates a mirror in defined area. Make sure the Gizmos are active to edit the su
 | **DeactivateMirror()** | Deactivates the mirror. | none  |
 | **ToggleMirror()**     | Toggles the mirror.     | none  |
 
-![Mirror](Screenshots/MirrorGif.gif)
+<img src="Screenshots/MirrorGif.gif" alt="Mirror" style="zoom:150%;" />
 
 
 
@@ -138,7 +138,7 @@ It utilizes an MLGrab component to determine when the user is drawing, when they
 
 Each button on the UI canvas systems make use of the MLClickable component to decipher when a user interacts with it. This is also used for the color selection process.
 
-![DrawingPens](Screenshots/DrawingGif.gif)
+<img src="Screenshots/DrawingGif.gif" alt="DrawingPens" style="zoom:150%;" />
 
 
 
@@ -151,7 +151,7 @@ This is an example raycast based "weapon". It makes use of the MLGrab component 
 
 Each event is synchronized, making the process of creating event-based systems with our MLGrab Component exceptionally easy!
 
-![Laser](Screenshots/Lasergif.gif)
+<img src="Screenshots/Lasergif.gif" alt="Laser" style="zoom:150%;" />
 
 
 
@@ -161,7 +161,7 @@ This grapple hook makes heavy use of the MLGrab component.
 
 The mechanics here cause the user to grapple to the object their hook has collided with.
 
-![GrappleHook](Screenshots/GrappleHookGif.gif)
+<img src="Screenshots/GrappleHookGif.gif" alt="GrappleHook" style="zoom:150%;" />
 
 
 
@@ -173,7 +173,7 @@ It will also apply an upwards buoyancy physics force to rigidbodies in the volum
 
 (Note that User rigidbodies are currently unaffected)
 
-![Watervolume](Screenshots/Watergif.gif)
+<img src="Screenshots/Watergif.gif" alt="Watervolume" style="zoom:150%;" />
 
 
 
@@ -197,7 +197,7 @@ This is a grabbable object that plays impact sounds on collision events. When th
 
 Music player & Visualization system. Interactable with our MLClickable system.
 
-![ObjectSpawner](Screenshots/JukeboxGif.gif)
+<img src="Screenshots/JukeboxGif.gif" alt="ObjectSpawner" style="zoom:150%;" />
 
 ## Teleport Examples
 
@@ -209,7 +209,7 @@ When the local user walks into this trigger volume, they will be teleported to a
 
 When the local user walks into this trigger volume and presses a button, they will be teleported to a specific gameobject position. In this instance you will be teleported back to the world spawn point.
 
-![Teleports](Screenshots/TeleportGif.gif){width=500}
+<img src="Screenshots/TeleportGif.gif" alt="Teleports" style="zoom:150%;" />
 
 
 
@@ -219,11 +219,11 @@ When the local user walks into this trigger volume and presses a button, they wi
 
 * **Trigger Door**
 
-  ![DoorTrigger](Screenshots/DoorTriggerGif.gif)
+  <img src="Screenshots/DoorTriggerGif.gif" alt="DoorTrigger" style="zoom:150%;" />
 
 * **Button Door**
 
-  ![DoorButton](Screenshots/DoorButton.gif)
+  <img src="Screenshots/DoorButton.gif" alt="DoorButton" style="zoom:150%;" />
 
 * **Non-physics door**
 
