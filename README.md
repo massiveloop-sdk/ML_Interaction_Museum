@@ -28,7 +28,7 @@ The MLGrab component allow dual hand grabbing of the objects. The first hand whi
 
 By attaching [MLSynchronizer](https://docs.massiveloop.com/docs/create/components/MLSynchronizer) to the the object, the Grabbing events will be synchronized to everyone in the room.
 
-![mlgrab](Screenshots/MLGrab.png)
+![mlgrab](Screenshots/MLGrabGif.gif)
 
 ##### [Requires](https://docs.massiveloop.com/docs/create/components/list/MLGrab.html#requires)
 
@@ -70,7 +70,7 @@ MLClickable component makes a GameObject clickable by player. You can register t
 
 MLStation component provides a mean to attach players to another object. The most common use for this is creating a seat. When attached to the station, the player loses its movement abilities, but still can move their head and hands. Using the Lua, the player controller inputs can be accessed and used to drive vehicles.
 
-![stationchair](Screenshots/StationChair.png)
+![stationchair](Screenshots/StationSeatGif.gif)
 
 
 
@@ -98,7 +98,7 @@ The Remote control can be spawned using `secondary` in VR and `f` + `RMB` or `es
 
 **Note**: Make sure the Gizmos are enabled in the browser in order to modify the browser surface.
 
-![BrowserVideoPlayer](Screenshots/BrowserVideoPlayer.png)
+![BrowserVideoPlayer](Screenshots/MLBrowserGif.gif)
 
 
 
@@ -122,7 +122,7 @@ Creates a mirror in defined area. Make sure the Gizmos are active to edit the su
 | **DeactivateMirror()** | Deactivates the mirror. | none  |
 | **ToggleMirror()**     | Toggles the mirror.     | none  |
 
-![Mirror](Screenshots/Mirror.png)
+![Mirror](Screenshots/MirrorGif.gif)
 
 
 
@@ -138,7 +138,7 @@ It utilizes an MLGrab component to determine when the user is drawing, when they
 
 Each button on the UI canvas systems make use of the MLClickable component to decipher when a user interacts with it. This is also used for the color selection process.
 
-![DrawingPens](Screenshots/DrawingPens.png)
+![DrawingPens](Screenshots/DrawingGif.gif)
 
 
 
@@ -151,7 +151,7 @@ This is an example raycast based "weapon". It makes use of the MLGrab component 
 
 Each event is synchronized, making the process of creating event-based systems with our MLGrab Component exceptionally easy!
 
-![Laser](Screenshots/Laser.png)
+![Laser](Screenshots/Lasergif.gif)
 
 
 
@@ -161,7 +161,7 @@ This grapple hook makes heavy use of the MLGrab component.
 
 The mechanics here cause the user to grapple to the object their hook has collided with.
 
-![GrappleHook](Screenshots/GrappleHook.png)
+![GrappleHook](Screenshots/GrappleHookGif.gif)
 
 
 
@@ -173,7 +173,7 @@ It will also apply an upwards buoyancy physics force to rigidbodies in the volum
 
 (Note that User rigidbodies are currently unaffected)
 
-![Watervolume](Screenshots/Watervolume.gif)
+![Watervolume](Screenshots/Watergif.gif)
 
 
 
@@ -197,7 +197,7 @@ This is a grabbable object that plays impact sounds on collision events. When th
 
 Music player & Visualization system. Interactable with our MLClickable system.
 
-![ObjectSpawner](Screenshots/Jukebox.png)
+![ObjectSpawner](Screenshots/JukeboxGif.gif)
 
 ## Teleport Examples
 
@@ -209,7 +209,7 @@ When the local user walks into this trigger volume, they will be teleported to a
 
 When the local user walks into this trigger volume and presses a button, they will be teleported to a specific gameobject position. In this instance you will be teleported back to the world spawn point.
 
-![Teleports](Screenshots/Teleports.png)
+![Teleports](Screenshots/TeleportGif.gif)
 
 
 
@@ -217,11 +217,13 @@ When the local user walks into this trigger volume and presses a button, they wi
 
 ## Door Examples
 
-* **Trigger Door**![DoorTrigger](Screenshots/DoorTrigger.png)
+* **Trigger Door**
+
+* ![DoorTrigger](Screenshots/DoorTriggerGif.gif)
 
 * **Button Door**
 
-  ![DoorButton](Screenshots/DoorButton.png)
+  ![DoorButton](Screenshots/DoorButton.gif)
 
 * **Non-physics door**
 
