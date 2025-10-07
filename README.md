@@ -209,7 +209,7 @@ When the local user walks into this trigger volume, they will be teleported to a
 
 When the local user walks into this trigger volume and presses a button, they will be teleported to a specific gameobject position. In this instance you will be teleported back to the world spawn point.
 
-![Teleports](Screenshots/TeleportGif.gif)
+![Teleports](Screenshots/TeleportGif.gif){width=500}
 
 
 
