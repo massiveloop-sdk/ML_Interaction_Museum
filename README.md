@@ -1,6 +1,8 @@
 # Massive Loop Interaction Museum
 
-The **Massive Loop Interaction Museum** is an immersive, cross-platform tutorial environment for both VR and Desktop PC. Designed to showcase the powerful built-in features of the Massive Loop SDK, it demonstrates how our component system empowers creators to enhance their Unity projects with dynamic, interactive elements with little to no scripting required. You will need to install the most recent version of Unity's post processing package. Navigate to your package manager and ensure that you have that installed before proceeding.
+The **Massive Loop Interaction Museum** is an immersive, cross-platform tutorial environment for both VR and Desktop PC. Designed to showcase the powerful built-in features of the Massive Loop SDK, it demonstrates how our component system empowers creators to enhance their Unity projects with dynamic, interactive elements with little to no scripting required. 
+
+You will need to install the most recent version of Unity's post processing package. Navigate to your package manager and ensure that you have that installed before proceeding.
 
 Click this image to view the video!
 [![Watch the video](https://img.youtube.com/vi/H7L3m7JvPRU/maxresdefault.jpg)](https://youtube.com/watch?v=H7L3m7JvPRU)
